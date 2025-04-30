@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Web</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">Santiago Gallego</h1>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link " data-nav-link>Inicio</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>Sobre mi</a>
+          </li>
+
+          <li>
+            <a href="#portfolio" class="navbar-link" data-nav-link>Portafolio</a>
+          </li>
+
+          <li>
+            <a href="#skills" class="navbar-link" data-nav-link>Habilidades</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contacto</a>
+          </li>
+
+          <li>
+            <a href="assets/docs/CV.docx" download="CV.docx" class="btn btn-primary">Descargar CV</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-banner">
+
+            <img src="./assets/images/hero-banner.png" width="800" height="864" loading="lazy" alt="Ethan's Photo"
+              class="img-cover">
+
+            <div class="elem elem-1">
+              <p class="elem-title">1</p>
+
+              <p class="elem-text">año de experiencia</p>
+            </div>
+
+            <div class="elem elem-2">
+              <p class="elem-title">6+</p>
+
+              <p class="elem-text">Proyectos completados</p>
+            </div>
+
+          </div>
+
+          <div class="hero-content">
+
+            <h2 class="hero-title">
+              <span>¡Hola, Soy!</span>
+              <strong>Santiago Gallego</strong> Desarrollador Back-End jr
+            </h2>
+
+            <p class="hero-text">
+              Apasionado por la tecnología y el desarrollo de soluciones eficientes, me especializo en la creación y mantenimiento de la lógica del servidor, bases de datos y APIs. Tengo conocimientos en Python, Node.js, SQL Server, y busco seguir creciendo profesionalmente en entornos colaborativos donde pueda aportar y seguir aprendiendo.
+            </p>
+
+            <div class="btn-group">
+              <a href="#contact" class="btn btn-primary blue">¡Contactame!</a>
+
+              <a href="#about" class="btn btn-primary blue">Sobre Mi</a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/about-banner.jpg" width="800" height="652" loading="lazy" alt="Ethan's Photo"
+              class="img-cover">
+
+            <div class="abs-icon abs-icon-1">
+              <ion-icon name="logo-css3"></ion-icon>
+            </div>
+
+            <div class="abs-icon abs-icon-2">
+              <ion-icon name="logo-javascript"></ion-icon>
+            </div>
+
+            <div class="abs-icon abs-icon-3">
+              <ion-icon name="logo-react"></ion-icon>
+            </div>
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">Desarrollador Back-End jr</p>
+
+            <h2 class="h2 section-title">Desarrollo aplicaciones para ayudar a las personas</h2>
+
+            <p class="section-text">
+              Me especializo en crear aplicaciones robustas y eficientes, optimizando el manejo de datos y la lógica del servidor para ofrecer soluciones que simplifiquen procesos y mejoren resultados.
+            </p>
+
+            <p class="section-text">
+              Con conocimientos en: Node.js, Python y SQL, me enfoco en brindar servicios escalables y de alta calidad.
+            </p>
+
+            <a href="#portfolio" class="btn btn-primary blue">Ver Portafolio</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PORTFOLIO
+      -->
+
+      <section class="section portfolio" id="portfolio">
+        <div class="container">
+
+          <p class="section-subtitle">Portafolio</p>
+
+          <h2 class="h2 section-title">Mi asombroso trabajo</h2>
+
+          <p class="section-text">
+            En esta sección podras ver un poco de mi trabajo.
+          </p>
+
+          <ul class="portfolio-list">
+
+            <li>
+              <a href="https://github.com/Santiago-Gallego/holbertonschool-web_react" class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Fundamentos Basicos en React</p>
+
+                  <h3 class="h3 h3_card card-title">Proceso de aprendizaje de React donde aprendemos desde TypeScript hasta Redux </h3>
+
+                  <span class="btn-link">
+                    <span>Ver Proyecto</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://github.com/Santiago-Gallego/Dashboard" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Aplicacion Dashboard</p>
+
+                  <h3 class="h3 h3_card card-title">Aplciacion de conocimientos basicos de React, donde diseñamos un Dashboard utilizando componentes</h3>
+
+                  <span class="btn-link">
+                    <span>Ver Proyecto</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://github.com/Santiago-Gallego/holbertonschool-low_level_programming" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Fundacmentos de desarrollo en lenguaje C</p>
+
+                  <h3 class="h3 h3_card card-title">Desarrollo de la ruta de aprendizaje en leguaje de bajo nivel C</h3>
+
+                  <span class="btn-link">
+                    <span>Ver Proyecto</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SKILLS
+      -->
+
+      <section class="section skills" id="skills">
+        <div class="container">
+
+          <p class="section-subtitle">Mis Habilidades</p>
+
+          <h2 class="h2 section-title">Habiliades tecnicas</h2>
+
+          <p class="section-text">
+            Aqui podras ver un poco de mis habilidades con su respectivo nivel de conocimientos
+          </p>
+
+          <ul class="skills-list">
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 50%">
+                <h3 class=" skills-title">CSS</h3>
+
+                <data class="skills-data" value="50">50%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 50%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 20%">
+                <h3 class="skills-title">React</h3>
+
+                <data class="skills-data" value="20">20%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 20%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 40%">
+                <h3 class="skills-title">MongoDB</h3>
+
+                <data class="skills-data" value="40">40%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 40%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 45%">
+                <h3 class="skills-title">Python</h3>
+
+                <data class="skills-data" value="45">45%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 45%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 80%">
+                <h3 class="skills-title">SQL Server</h3>
+
+                <data class="skills-data" value="80">80%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 80%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 60%">
+                <h3 class="skills-title">JavaScript</h3>
+
+                <data class="skills-data" value="60">60%</data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 60%"></div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          
+          <div class="contact-card">
+
+            <p class="card-subtitle">No seas timido</p>
+
+            <h2 class="h2 section-title">¡Escribeme!</h2>
+
+            <div class="wrapper">
+
+              <form action="" class="contact-form">
+
+                <input type="text" name="name" placeholder="Nombre" required class="contact-input">
+
+                <input type="email" name="email" placeholder="Correo" required class="contact-input">
+
+                <textarea name="message" placeholder="Mensage" required class="contact-input"></textarea>
+
+                <button type="submit" class="btn-submit">Enviar Mensage</button>
+
+              </form>
+
+              <ul class="contact-list">
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="location"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Direccion</h3>
+
+                    <address class="contact-item-link">
+                      Bogota, Colombia
+                    </address>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="mail"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Correco</h3>
+
+                    <a href="santiago.programa01@gmail.com" class="contact-item-link">santiago.programa01@gmail.com</a>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="call"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Telefono</h3>
+
+                    <a href="tel:+57 3207190723" class="contact-item-link">+57 3207190723</a>
+                  </div>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </article>
+  </main>
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+      </p>
+
+      <ul class="footer-list">
+        <li>
+          <a href="#" class="footer-link">Terminos & Condiciones</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Politica de Privacidad</a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
