@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>Fundamentos de Node.js | Blog</title>
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#">
+                <h1 class="logo">Santiago Gallego</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" class="close-icon"></ion-icon>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="../Blog/blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article">
+            <div class="container">
+
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Backend</span>
+                        <span class="article-date">May 15, 2024</span>
+                        <span class="article-time">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>15 min lectura</span>
+                        </span>
+                    </div>
+
+                    <h1 class="h1 article-title">Optimización de Consultas en SQL Server</h1>
+
+                    <div class="article-author">
+                        <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
+                        <div>
+                            <span>Escrito por</span>
+                            <strong>Santiago Gallego</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-banner">
+                    <img src="../assets/images/sql-server.png" alt="SQL Server" class="img-cover">
+                </div>
+
+                <div class="article-content">
+                    <h2>¿Por qué optimizar consultas?</h2>
+                    <p>En bases de datos con miles de registros, consultas mal escritas pueden ralentizar tu aplicación
+                        hasta en un 500%. SQL Server ofrece herramientas como el <strong>Execution Plan</strong> para
+                        diagnosticar problemas.</p>
+
+                    <h3>Técnicas Clave</h3>
+
+                    <div class="tip-box">
+                        <h4>1. Índices Estratégicos</h4>
+                        <p>Crea índices en columnas usadas frecuentemente en WHERE, JOIN y ORDER BY:</p>
+                        <pre><code class="language-sql">CREATE INDEX idx_usuario_email ON Usuarios(email);</code></pre>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>2. Evita SELECT *</h4>
+                        <p>Selecciona solo las columnas necesarias:</p>
+                        <pre><code class="language-sql">-- Mal
+SELECT * FROM Productos;
+
+-- Bien
+SELECT id, nombre, precio FROM Productos;</code></pre>
+                    </div>
+
+                    <h3>Análisis de Rendimiento</h3>
+                    <p>Usa estas consultas para monitorear:</p>
+
+                    <pre><code class="language-sql">-- Consultas más lentas
+SELECT TOP 10 
+  query_stats.query_hash,
+  query_stats.execution_count,
+  query_stats.total_elapsed_time / query_stats.execution_count AS avg_duration
+FROM sys.dm_exec_query_stats AS query_stats
+ORDER BY avg_duration DESC;</code></pre>
+                </div>
+
+
+                <div class="article-content">
+                    <h2>Índices Columnstore</h2>
+                    <p>Revolucionan el rendimiento en data warehouses (OLAP):</p>
+
+                    <pre><code class="language-sql">-- Creación de índice columnstore
+CREATE CLUSTERED COLUMNSTORE INDEX CCI_Transacciones 
+ON Transacciones;
+
+-- Consulta optimizada para columnstore
+SELECT 
+    ProductoID,
+    SUM(Cantidad) AS TotalVendido,
+    AVG(PrecioUnitario) AS PrecioPromedio
+FROM Transacciones
+WHERE Fecha BETWEEN '2023-01-01' AND '2023-12-31'
+GROUP BY ProductoID;</code></pre>
+
+                    <h3>Parameter Sniffing Problem</h3>
+                    <p>Solución a un problema común en procedimientos almacenados:</p>
+
+                    <pre><code class="language-sql">-- Problema
+CREATE PROCEDURE GetClientesPorRegion
+    @RegionID INT
+AS
+BEGIN
+    SELECT * FROM Clientes WHERE RegionID = @RegionID;
+END;
+
+-- Solución 1: Usar variable local
+CREATE PROCEDURE GetClientesPorRegion_Opt
+    @RegionID INT
+AS
+BEGIN
+    DECLARE @LocalRegionID INT = @RegionID;
+    SELECT * FROM Clientes WHERE RegionID = @LocalRegionID;
+END;
+
+-- Solución 2: OPTION (OPTIMIZE FOR UNKNOWN)
+CREATE PROCEDURE GetClientesPorRegion_Opt2
+    @RegionID INT
+AS
+BEGIN
+    SELECT * FROM Clientes 
+    WHERE RegionID = @RegionID
+    OPTION (OPTIMIZE FOR UNKNOWN);
+END;</code></pre>
+
+                    <h3>Tablas Temporales vs Table Variables</h3>
+                    <table class="styled-table">
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Tablas Temporales (#temp)</th>
+                            <th>Variables de Tabla (@table)</th>
+                        </tr>
+                        <tr>
+                            <td>Stats</td>
+                            <td>Tiene estadísticas</td>
+                            <td>Asume 1 fila (problema en datasets grandes)</td>
+                        </tr>
+                        <tr>
+                            <td>Scope</td>
+                            <td>Sesión/scope</td>
+                            <td>Batch actual</td>
+                        </tr>
+                        <tr>
+                            <td>Uso recomendado</td>
+                            <td>+10,000 filas</td>
+                            <td>
+                                <10 filas</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="article-footer">
+                    <a href="./blog.html" class="btn btn-primary blue">
+                        <ion-icon name="arrow-back"></ion-icon>
+                        Volver al Blog
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <p class="copyright">
+                &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+            </p>
+
+            <ul class="footer-list">
+                <li>
+                    <a href="#" class="footer-link">Terminos & Condiciones</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Politica de Privacidad</a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>Fundamentos de Node.js | Blog</title>
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#">
+                <h1 class="logo">Santiago Gallego</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" class="close-icon"></ion-icon>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="../Blog/blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article">
+            <div class="container">
+
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Backend</span>
+                        <span class="article-date">May 15, 2024</span>
+                        <span class="article-time">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>15 min lectura</span>
+                        </span>
+                    </div>
+
+                    <h1 class="h1 article-title">Fundamentos de Node.js para Principiantes</h1>
+
+                    <div class="article-author">
+                        <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
+                        <div>
+                            <span>Escrito por</span>
+                            <strong>Santiago Gallego</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-banner">
+                    <img src="../assets/images/python.png" alt="Python" class="img-cover">
+                </div>
+
+                <div class="article-content">
+                    <h2>Patrones Esenciales para Backend</h2>
+                    <p>Los patrones de diseño solucionan problemas comunes de arquitectura. En Python, su implementación
+                        es más sencilla gracias a su sintaxis clara.</p>
+
+                    <h3>1. Singleton</h3>
+                    <p>Garantiza una única instancia de clase (ideal para conexiones a DB):</p>
+
+                    <pre><code class="language-python">class DatabaseConnection:
+    _instance = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.connect()
+        return cls._instance
+    
+    def connect(self):
+        print("Conectando a la base de datos...")
+
+# Uso
+db1 = DatabaseConnection()
+db2 = DatabaseConnection()
+print(db1 is db2)  # True</code></pre>
+
+                    <h3>2. Factory Method</h3>
+                    <p>Crea objetos sin especificar la clase exacta:</p>
+
+                    <pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Notificador(ABC):
+    @abstractmethod
+    def enviar(self, mensaje): pass
+
+class EmailNotificador(Notificador):
+    def enviar(self, mensaje):
+        print(f"Email enviado: {mensaje}")
+
+class SMSNotificador(Notificador):
+    def enviar(self, mensaje):
+        print(f"SMS enviado: {mensaje}")
+
+def fabrica_notificador(tipo):
+    notificadores = {
+        'email': EmailNotificador,
+        'sms': SMSNotificador
+    }
+    return notificadores[tipo]()</code></pre>
+
+                    <h3>Comparativa de Patrones</h3>
+                    <table class="styled-table">
+                        <tr>
+                            <th>Patrón</th>
+                            <th>Uso Recomendado</th>
+                            <th>Complejidad</th>
+                        </tr>
+                        <tr>
+                            <td>Singleton</td>
+                            <td>Conexiones globales</td>
+                            <td>Baja</td>
+                        </tr>
+                        <tr>
+                            <td>Factory</td>
+                            <td>Sistemas multi-protocolo</td>
+                            <td>Media</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="article-content">
+                    <h2>Dependency Injection en Python</h2>
+                    <p>Implementación elegante sin frameworks:</p>
+
+                    <pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class DatabaseService:
+    conn_str: str
+    
+    def get_users(self):
+        print(f"Conectando a {self.conn_str}")
+        return ["user1", "user2"]
+
+class UserService:
+    def __init__(self, db: DatabaseService):
+        self.db = db
+    
+    def get_all_users(self):
+        return self.db.get_users()
+
+# Configuración
+dev_db = DatabaseService("server=dev;user=admin")
+prod_db = DatabaseService("server=prod;user=admin")
+
+# Uso
+user_service = UserService(dev_db)  # Inyectamos dependencia
+print(user_service.get_all_users())</code></pre>
+
+                    <h3>Patrón CQRS (Command Query Responsibility Segregation)</h3>
+                    <p>Ejemplo práctico para separar lecturas y escrituras:</p>
+
+                    <pre><code class="language-python">class ProductCommandService:
+    def __init__(self, db):
+        self.db = db
+    
+    def create_product(self, name, price):
+        # Lógica de validación compleja
+        self.db.execute("INSERT INTO products VALUES (?, ?)", (name, price))
+
+class ProductQueryService:
+    def __init__(self, cache):
+        self.cache = cache
+    
+    def get_products(self):
+        # Cache-first strategy
+        if 'products' in self.cache:
+            return self.cache['products']
+        
+        products = [...]  # Lógica de consulta
+        self.cache['products'] = products
+        return products</code></pre>
+
+                    <h3>Decoradores Avanzados</h3>
+                    <p>Implementando Circuit Breaker:</p>
+
+                    <pre><code class="language-python">import time
+from functools import wraps
+
+class CircuitBreaker:
+    def __init__(self, max_fails=3, reset_timeout=10):
+        self.max_fails = max_fails
+        self.reset_timeout = reset_timeout
+        self.fails = 0
+        self.last_fail = 0
+    
+    def __call__(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            if self.fails >= self.max_fails:
+                if time.time() - self.last_fail > self.reset_timeout:
+                    self.fails = 0  # Reset
+                else:
+                    raise Exception("Circuit breaker activado")
+            
+            try:
+                result = func(*args, **kwargs)
+                self.fails = 0
+                return result
+            except Exception as e:
+                self.fails += 1
+                self.last_fail = time.time()
+                raise
+        
+        return wrapper
+
+@CircuitBreaker(max_fails=2, reset_timeout=30)
+def call_external_api():
+    # Lógica que puede fallar
+    pass</code></pre>
+                </div>
+
+                <div class="article-footer">
+                    <a href="./blog.html" class="btn btn-primary blue">
+                        <ion-icon name="arrow-back"></ion-icon>
+                        Volver al Blog
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <p class="copyright">
+                &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+            </p>
+
+            <ul class="footer-list">
+                <li>
+                    <a href="#" class="footer-link">Terminos & Condiciones</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Politica de Privacidad</a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

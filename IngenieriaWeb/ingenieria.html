@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#">
+                <h1 class="logo">Santiago Gallego</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" class="close-icon"></ion-icon>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="../Blog/blog.html" class="navbar-link">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Ingenieria Web</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <body id="top">
+
+        <!-- Mismo header que tu index principal -->
+
+        <main>
+            <article>
+                <section class="section web-engineering">
+                    <div class="container">
+
+                        <p class="section-subtitle">Arquitectura & Sistemas</p>
+                        <h2 class="h2 section-title">Ingeniería Web</h2>
+                        <p class="section-text">
+                            Artículos técnicos sobre diseño de sistemas escalables, patrones avanzados y optimización de
+                            infraestructura.
+                        </p>
+
+                        <div class="topics-grid">
+
+                            <!-- Tarjeta 1 - Front-End -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(74, 144, 226, 0.1);">
+                                        <ion-icon name="logo-react" style="color: #61DAFB;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">Front-End</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        Desarrollo de interfaces con React, Vue o Angular. Estado global, performance y
+                                        SSR.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="FrontEnd.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Tarjeta 2 - Back-End -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(105, 240, 174, 0.1);">
+                                        <ion-icon name="code-slash" style="color: #69F0AE;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">Back-End</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        APIs con Node.js, Django o Spring Boot. Autenticación JWT, websockets y
+                                        optimización.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="BackEnd.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Tarjeta 3 - Bases de Datos -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(255, 213, 79, 0.1);">
+                                        <ion-icon name="server" style="color: #FFD54F;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">Bases de Datos</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        SQL vs NoSQL, índices, transacciones y modelado de datos para alta
+                                        escalabilidad.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="BD.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Tarjeta 4 - DevOps -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(239, 83, 80, 0.1);">
+                                        <ion-icon name="settings" style="color: #EF5350;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">DevOps</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        CI/CD, Docker, Kubernetes y monitoreo con Prometheus y Grafana.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="DevOps.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Tarjeta 5 - Arquitectura Web -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(171, 71, 188, 0.1);">
+                                        <ion-icon name="layers" style="color: #AB47BC;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">Arquitectura Web</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        Microservicios, serverless, CQRS y patrones de diseño escalables.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="Arquitectura.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Tarjeta 6 - Cloud -->
+                            <article class="topic-card">
+                                <div class="card-icon-section">
+                                    <div class="topic-icon" style="background: rgba(66, 165, 245, 0.1);">
+                                        <ion-icon name="cloud" style="color: #42A5F5;"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="card-title-section">
+                                    <h3 class="h3 topic-title">Cloud</h3>
+                                </div>
+                                <div class="card-content-section">
+                                    <p class="topic-description">
+                                        AWS, Azure y GCP. Implementación de soluciones serverless y autoescalables.
+                                    </p>
+                                </div>
+                                <div class="card-action-section">
+                                    <a href="Cloud.html" class="btn btn-primary blue">
+                                        Ver Artículos
+                                    </a>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </div>
+                </section>
+            </article>
+        </main>
+
+
+    </body>
+
+    <footer class="footer">
+        <div class="container">
+
+            <p class="copyright">
+                &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+            </p>
+
+            <ul class="footer-list">
+                <li>
+                    <a href="#" class="footer-link">Terminos & Condiciones</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Politica de Privacidad</a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

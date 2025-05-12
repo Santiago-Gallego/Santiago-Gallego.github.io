@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Web</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#">
+                <h1 class="logo">Santiago Gallego</h1>
+            </a>
+
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" class="close-icon"></ion-icon>
+            </button>
+
+            <nav class="navbar container">
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="../Blog/blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- 
+        - #BLOG
+    -->
+
+    <section class="section blog" id="blog">
+        <div class="container">
+
+            <p class="section-subtitle">Artículos Recientes</p>
+
+            <h2 class="h2 section-title">Mi Blog Personal</h2>
+
+            <p class="section-text">
+                Comparto conocimientos sobre desarrollo backend, mejores prácticas y experiencias de aprendizaje.
+            </p>
+
+            <div class="blog-grid">
+
+                <!-- Artículo 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-banner img" >
+                        <img src="../assets/images/node.png" loading="lazy" alt="Fundamentos de Node.js" width="1200" height="675">
+                            class="img-cover">
+                        <div class="blog-badge">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>15 min lectura</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Backend</span>
+                            <span class="blog-date">May 15, 2024</span>
+                        </div>
+
+                        <h3 class="h3 blog-title">Fundamentos de Node.js para Principiantes</h3>
+
+                        <p class="blog-text">
+                            Guía completa para entender el event loop, módulos core y creación de tu primer servidor
+                            HTTP.
+                        </p>
+
+                        <a href = "./art1.html" class="blog-link">
+                            <span>Leer Artículo</span>
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-banner">
+                        <img src="../assets/images/sql-server.png" loading="lazy" alt="SQL Server" class="img-cover" width="1200" height="675">
+                        <div class="blog-badge">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>10 min lectura</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Bases de Datos</span>
+                            <span class="blog-date">Abr 28, 2024</span>
+                        </div>
+
+                        <h3 class="h3 blog-title">Optimización de Consultas en SQL Server</h3>
+
+                        <p class="blog-text">
+                            Técnicas avanzadas para mejorar el rendimiento de tus queries y diseño de índices
+                            eficientes.
+                        </p>
+
+                        <a href="./art2.html" class="blog-link">
+                            <span>Leer Artículo</span>
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-banner">
+                        <img src="../assets/images/python.png" loading="lazy" alt="Python" class="img-cover" width="1200" height="675">
+                        <div class="blog-badge">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>12 min lectura</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Python</span>
+                            <span class="blog-date">Mar 10, 2024</span>
+                        </div>
+
+                        <h3 class="h3 blog-title">Patrones de Diseño en Python para Backend</h3>
+
+                        <p class="blog-text">
+                            Implementación práctica de Singleton, Factory y Observer en aplicaciones escalables.
+                        </p>
+
+                        <a href="./art3.html" class="blog-link">
+                            <span>Leer Artículo</span>
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+            <!-- 
+                <div class="blog-cta">
+                    <a href="#" class="btn btn-primary blue">Ver Todos los Artículos</a>
+                </div>
+            Boton para cuando se añadan mas -->
+        </div>
+    </section>
+
+</body>
+
+
+<footer class="footer">
+    <div class="container">
+
+        <p class="copyright">
+            &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+        </p>
+
+        <ul class="footer-list">
+            <li>
+                <a href="#" class="footer-link">Terminos & Condiciones</a>
+            </li>
+
+            <li>
+                <a href="#" class="footer-link">Politica de Privacidad</a>
+            </li>
+        </ul>
+
+    </div>
+</footer>
+
+
+
+
+
+<!-- 
+    - #BACK TO TOP
+  -->
+
+<a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+
+
+
+<!-- 
+    - custom js link
+  -->
+<script src="../assets/js/script.js"></script>
+
+<!-- 
+    - ionicon link
+  -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
