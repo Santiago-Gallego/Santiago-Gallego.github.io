@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <title>Front-End: React vs Angular | Santiago Gallego</title>
+</head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">Santiago Gallego</h1>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+          </li>
+
+          <li>
+            <a href="../Blog/blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="../IngenieriaWeb/ingenieria.html" class="navbar-link" data-nav-link>Ingenieria Web</a>
+          </li>
+
+          <li>
+            <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+          </li>
+
+          <li>
+            <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article class="web-article">
+      <br><br>
+      <div class="container">
+        <div class="article-content">
+
+          <!-- Meta información -->
+          <div class="article-header">
+            <div class="article-meta">
+              <span class="article-category">React</span>
+              <span class="article-category">Angular</span>
+              <span class="article-date">Mayo 12, 2025</span>
+              <span class="article-time">
+                <ion-icon name="time-outline"></ion-icon>
+                <span>15 min lectura</span>
+              </span>
+            </div>
+
+            <h1 class="h1 article-title">React vs Angular</h1>
+
+            <div class="article-author">
+              <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
+              <div>
+                <span>Escrito por</span>
+                <strong>Santiago Gallego</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner principal-->
+          <div class="article-banner">
+            <img src="../assets/images/AngvsReact.webp" alt="React vs Angular" loading="lazy">
+          </div>
+
+          <section class="definition-section">
+            <h2>1. Modelos Fundamentales</h2>
+
+            <div class="definition-card">
+              <h3>Cliente-Servidor</h3>
+              <p><strong>Modelo de comunicación distribuida</strong> donde el cliente (navegador/app) solicita recursos
+                a un servidor (backend), que procesa y responde.</p>
+              <p class="highlight">"Separación clara entre frontend y backend"</p>
+            </div>
+
+            <div class="definition-card">
+              <h3>MVC (Modelo-Vista-Controlador)</h3>
+              <p><strong>Patrón arquitectónico</strong> que divide la lógica en 3 componentes: Modelo (datos), Vista
+                (UI) y Controlador (lógica de negocio).</p>
+              <p class="highlight">"Organización interna de la aplicación"</p>
+            </div>
+          </section>
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <div class="features-grid">
+              <!-- Cliente-Servidor -->
+              <div class="arch-features">
+                <h3 class="client-title">Cliente-Servidor</h3>
+                <ul>
+                  <li><strong>Roles definidos</strong>: Cliente = Presentación, Servidor = Lógica/Datos</li>
+                  <li><strong>Protocolos</strong>: HTTP/HTTPS, WebSockets</li>
+                  <li><strong>Escalabilidad</strong>: Servidores independientes del cliente</li>
+                  <li><strong>Ejemplos</strong>: APIs REST, GraphQL</li>
+                </ul>
+              </div>
+
+              <!-- MVC -->
+              <div class="arch-features">
+                <h3 class="mvc-title">MVC</h3>
+                <ul>
+                  <li><strong>Separación de preocupaciones</strong>: Cada componente tiene una responsabilidad única
+                  </li>
+                  <li><strong>Flujo unidireccional</strong>: Usuario → Controlador → Modelo → Vista</li>
+                  <li><strong>Reutilización</strong>: Modelos y vistas intercambiables</li>
+                  <li><strong>Frameworks</strong>: Django (Python), Ruby on Rails, Spring MVC</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="pros-cons-section">
+            <h2>3. Comparación Directa</h2>
+
+            <div class="comparison-table">
+              <table>
+                <tr>
+                  <th>Criterio</th>
+                  <th>Cliente-Servidor</th>
+                  <th>MVC</th>
+                </tr>
+                <tr>
+                  <td><strong>Acoplamiento</strong></td>
+                  <td>✅ Bajo (front/back separados)</td>
+                  <td>⚠️ Alto (componentes interconectados)</td>
+                </tr>
+                <tr>
+                  <td><strong>Complejidad</strong></td>
+                  <td>✅ Fácil de entender</td>
+                  <td>⚠️ Requiere disciplina en separación</td>
+                </tr>
+                <tr>
+                  <td><strong>Flexibilidad</strong></td>
+                  <td>✅ Client-side puede cambiar fácilmente</td>
+                  <td>✅ Modelos independientes de la vista</td>
+                </tr>
+                <tr>
+                  <td><strong>Uso típico</strong></td>
+                  <td>SPAs, Apps móviles</td>
+                  <td>Aplicaciones monolíticas</td>
+                </tr>
+              </table>
+            </div>
+          </section>
+          <section class="learning-section">
+            <h2>4. Dificultad de Implementación</h2>
+
+            <div class="learning-path">
+              <div class="client-learning">
+                <h3>Cliente-Servidor</h3>
+                <div class="learning-bar" style="--percentage: 50%;">
+                  <div class="bar"></div>
+                  <span>Moderada</span>
+                </div>
+                <ul>
+                  <li>📌 Conceptos clave: APIs, Endpoints, CORS</li>
+                  <li>📌 Herramientas: Postman, Swagger</li>
+                  <li>⏱️ ~2 semanas para flujos básicos</li>
+                </ul>
+              </div>
+
+              <div class="mvc-learning">
+                <h3>MVC</h3>
+                <div class="learning-bar" style="--percentage: 70%;">
+                  <div class="bar"></div>
+                  <span>Moderada/Alta</span>
+                </div>
+                <ul>
+                  <li>📌 Requiere entender responsabilidades de cada capa</li>
+                  <li>📌 Patrones adicionales: Repositorio, Servicios</li>
+                  <li>⏱️ ~1 mes para implementación robusta</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="opinion-section">
+            <h2>5. ¿Cómo y cuándo usarlos?</h2>
+
+            <div class="opinion-card">
+              <p><strong>Cliente-Servidor</strong> es esencial para <span class="highlight">aplicaciones distribuidas
+                  modernas</span>. Ideal cuando necesitas separar completamente el frontend (React/Angular) del backend
+                (Node.js/Python).</p>
+            </div>
+
+            <div class="opinion-card">
+              <p><strong>MVC</strong> sigue siendo relevante para <span class="highlight">aplicaciones
+                  monolíticas</span> donde la lógica y la vista están estrechamente integradas (ej: administradores de
+                contenido, sistemas internos).</p>
+            </div>
+
+            <blockquote class="expert-opinion">
+              "Cliente-Servidor es como un restaurante (cliente pide, cocina prepara), MVC es como una cadena de
+              ensamblaje (cada estación transforma el producto). Ambos resuelven problemas distintos."
+            </blockquote>
+          </section>
+        </div>
+      </div>
+    </article>
+    <br>
+    <br>
+  </main>
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+      </p>
+
+      <ul class="footer-list">
+        <li>
+          <a href="#" class="footer-link">Terminos & Condiciones</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Politica de Privacidad</a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../favicon.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <title>Bases de Datos: SQL Server vs MongoDB | Santiago Gallego</title>
+</head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">Santiago Gallego</h1>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="../index.html" class="navbar-link " data-nav-link>Inicio</a>
+          </li>
+
+          <li>
+            <a href="../Blog/blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="../IngenieriaWeb/ingenieria.html" class="navbar-link" data-nav-link>Ingenieria Web</a>
+          </li>
+
+          <li>
+            <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
+          </li>
+
+          <li>
+            <a href="../assets/docs/CV.pdf" download="CV.pdf" class="btn btn-primary">Descargar CV</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article class="web-article">
+      <br><br>
+      <div class="container">
+        <div class="article-content">
+
+          <!-- Meta información -->
+          <div class="article-header">
+            <div class="article-meta">
+              <span class="article-category">SQL Server</span>
+              <span class="article-category">Mongo DB</span>
+              <span class="article-date">Mayo 12, 2025</span>
+              <span class="article-time">
+                <ion-icon name="time-outline"></ion-icon>
+                <span>17 min lectura</span>
+              </span>
+            </div>
+
+            <h1 class="h1 article-title">SQL Server vs MongoDB</h1>
+
+            <div class="article-author">
+              <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
+              <div>
+                <span>Escrito por</span>
+                <strong>Santiago Gallego</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner principal-->
+          <div class="article-banner">
+            <img src="../assets/images/AngvsReact.webp" alt="React vs Angular" loading="lazy">
+          </div>
+
+          <section class="definition-section">
+            <h2>1. ¿Qué son SQL Server y MongoDB?</h2>
+
+            <div class="definition-card">
+              <h3>SQL Server</h3>
+              <p><strong>Sistema de gestión de bases de datos relacionales (RDBMS)</strong> desarrollado por Microsoft.
+                Usa lenguaje SQL y sigue el modelo ACID para transacciones.</p>
+              <p class="highlight">"Estructura rígida con tablas, filas y relaciones"</p>
+            </div>
+
+            <div class="definition-card">
+              <h3>MongoDB</h3>
+              <p><strong>Base de datos NoSQL orientada a documentos</strong> (JSON-like). Esquema flexible,
+                escalabilidad horizontal y alta performance en operaciones de lectura/escritura.</p>
+              <p class="highlight">"Documentos flexibles en colecciones, no tablas"</p>
+            </div>
+          </section>
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <div class="features-grid">
+              <!-- SQL Server -->
+              <div class="db-features">
+                <h3 class="sql-title">SQL Server</h3>
+                <ul>
+                  <li><strong>Modelo Relacional</strong>: Tablas con relaciones (PK/FK)</li>
+                  <li><strong>Transacciones ACID</strong>: Atomicidad, Consistencia, Aislamiento, Durabilidad</li>
+                  <li><strong>Stored Procedures</strong>: Lógica de negocio en el servidor</li>
+                  <li><strong>Índices Clusterizados</strong>: Optimización para búsquedas complejas</li>
+                </ul>
+              </div>
+
+              <!-- MongoDB -->
+              <div class="db-features">
+                <h3 class="mongo-title">MongoDB</h3>
+                <ul>
+                  <li><strong>Documentos BSON</strong>: Almacenamiento en formato JSON binario</li>
+                  <li><strong>Escalabilidad Horizontal</strong>: Sharding automático</li>
+                  <li><strong>Agregaciones</strong>: Pipeline para análisis de datos</li>
+                  <li><strong>Alta Disponibilidad</strong>: Réplicas auto-elegibles</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="pros-cons-section">
+            <h2>3. Ventajas y Desventajas</h2>
+
+            <div class="comparison-table">
+              <table>
+                <tr>
+                  <th>Criterio</th>
+                  <th>SQL Server</th>
+                  <th>MongoDB</th>
+                </tr>
+                <tr>
+                  <td><strong>Esquema</strong></td>
+                  <td>✅ Estructura fija</td>
+                  <td>✅ Flexible (schemaless)</td>
+                </tr>
+                <tr>
+                  <td><strong>Escalabilidad</strong></td>
+                  <td>⚠️ Vertical (más hardware)</td>
+                  <td>✅ Horizontal (sharding)</td>
+                </tr>
+                <tr>
+                  <td><strong>Transacciones</strong></td>
+                  <td>✅ Complejas (ACID)</td>
+                  <td>⚠️ Limitadas (multi-documento)</td>
+                </tr>
+                <tr>
+                  <td><strong>Rendimiento</strong></td>
+                  <td>✅ Consultas complejas</td>
+                  <td>✅ Alto throughput I/O</td>
+                </tr>
+              </table>
+            </div>
+          </section>
+
+          <section class="learning-section">
+            <h2>4. Dificultad de Aprendizaje</h2>
+
+            <div class="learning-path">
+              <div class="sql-learning">
+                <h3>SQL Server</h3>
+                <div class="learning-bar" style="--percentage: 65%;">
+                  <div class="bar"></div>
+                  <span>Moderada/Alta</span>
+                </div>
+                <ul>
+                  <li>📌 Requiere conocimiento de SQL avanzado</li>
+                  <li>📌 Conceptos clave: Normalización, JOINS, índices</li>
+                  <li>⏱️ ~1 mes para diseño de bases relacionales</li>
+                </ul>
+              </div>
+
+              <div class="mongo-learning">
+                <h3>MongoDB</h3>
+                <div class="learning-bar" style="--percentage: 40%;">
+                  <div class="bar"></div>
+                  <span>Baja/Moderada</span>
+                </div>
+                <ul>
+                  <li>📌 Sintaxis JSON-like intuitiva</li>
+                  <li>📌 Conceptos clave: Aggregation Pipeline, índices</li>
+                  <li>⏱️ ~2 semanas para CRUD básico</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="opinion-section">
+            <h2>5. ¿Cuándo elegir cada uno?</h2>
+
+            <div class="opinion-card">
+              <p><strong>SQL Server</strong> es ideal para <span class="highlight">sistemas transaccionales</span> donde
+                la integridad de datos es crítica (ej: banca, ERP). Su soporte ACID y herramientas de reporting lo hacen
+                insustituible.</p>
+            </div>
+
+            <div class="opinion-card">
+              <p><strong>MongoDB</strong> brilla en <span class="highlight">aplicaciones escalables</span> con datos
+                semi-estructurados (ej: IoT, catalogs, content management). Su flexibilidad acelera el desarrollo en
+                entornos ágiles.</p>
+            </div>
+
+            <blockquote class="expert-opinion">
+              "SQL Server es como un archivador metálico (ordenado pero rígido), MongoDB es una mochila (flexible pero
+              requiere organización). Elige según la naturaleza de tus datos."
+            </blockquote>
+          </section>
+
+        </div>
+      </div>
+    </article>
+    <br>
+    <br>
+  </main>
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link">Santiago Gallego</a>.
+      </p>
+
+      <ul class="footer-list">
+        <li>
+          <a href="#" class="footer-link">Terminos & Condiciones</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Politica de Privacidad</a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
