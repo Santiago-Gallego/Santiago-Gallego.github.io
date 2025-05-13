@@ -54,6 +54,10 @@
                     </li>
 
                     <li>
+                        <a href="../IngenieriaWeb/ingenieria.html" class="navbar-link" data-nav-link>Ingenieria Web</a>
+                    </li>
+
+                    <li>
                         <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
                     </li>
 
@@ -80,7 +84,7 @@
                         </span>
                     </div>
 
-                    <h1 class="h1 article-title">Fundamentos de Node.js para Principiantes</h1>
+                    <h1 class="h1 article-title">Fundamentos de Python para Principiantes</h1>
 
                     <div class="article-author">
                         <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
@@ -95,166 +99,87 @@
                     <img src="../assets/images/python.png" alt="Python" class="img-cover">
                 </div>
 
-                <div class="article-content">
-                    <h2>Patrones Esenciales para Backend</h2>
-                    <p>Los patrones de diseño solucionan problemas comunes de arquitectura. En Python, su implementación
-                        es más sencilla gracias a su sintaxis clara.</p>
+                <section class="definition-section">
+                    <h2>¿Qué es Python?</h2>
 
-                    <h3>1. Singleton</h3>
-                    <p>Garantiza una única instancia de clase (ideal para conexiones a DB):</p>
+                    <div class="definition-card">
+                        <p><strong>Python</strong> es uno de los lenguajes de programación más populares del mundo,
+                            utilizado en áreas como desarrollo web, inteligencia artificial, automatización y más. Si
+                            estás empezando en el mundo de la programación o considerando aprender Python, aquí tienes
+                            una guía completa sobre sus fundamentos, ventajas, desventajas y por qué deberías elegirlo.
+                        </p>
 
-                    <pre><code class="language-python">class DatabaseConnection:
-    _instance = None
-    
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance.connect()
-        return cls._instance
-    
-    def connect(self):
-        print("Conectando a la base de datos...")
+                    </div>
+                </section>
 
-# Uso
-db1 = DatabaseConnection()
-db2 = DatabaseConnection()
-print(db1 is db2)  # True</code></pre>
+                <section class="features-section">
+                    <h2>2. Características Clave</h2>
+                    <br>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Multiproposito</strong>:
+                            <p>Soporta programacion orientada a objetos (POO) y Procedural</p>
+                        </li>
 
-                    <h3>2. Factory Method</h3>
-                    <p>Crea objetos sin especificar la clase exacta:</p>
+                        <li>
+                            <strong>Gran Comunidad y Librerías</strong>:
 
-                    <pre><code class="language-python">from abc import ABC, abstractmethod
+                            <p>
+                                Web: Django, Flask
+                            </p>
+                            <p>
+                                Datos: Pandas, NumPy
+                            </p>
+                            <p>
+                                IA/ML: TensorFlow, PyTorch
+                            </p>
+                            <p>
+                                Automatización: Selenium, Requests
+                            </p>
 
-class Notificador(ABC):
-    @abstractmethod
-    def enviar(self, mensaje): pass
+                        </li>
 
-class EmailNotificador(Notificador):
-    def enviar(self, mensaje):
-        print(f"Email enviado: {mensaje}")
+                        <li>
+                            <strong>Multiplataforma</strong>:
+                            <p>Funciona en Windows, Linux y macOS sin cambios en el código.</p>
+                        </li>
 
-class SMSNotificador(Notificador):
-    def enviar(self, mensaje):
-        print(f"SMS enviado: {mensaje}")
-
-def fabrica_notificador(tipo):
-    notificadores = {
-        'email': EmailNotificador,
-        'sms': SMSNotificador
-    }
-    return notificadores[tipo]()</code></pre>
-
-                    <h3>Comparativa de Patrones</h3>
-                    <table class="styled-table">
-                        <tr>
-                            <th>Patrón</th>
-                            <th>Uso Recomendado</th>
-                            <th>Complejidad</th>
-                        </tr>
-                        <tr>
-                            <td>Singleton</td>
-                            <td>Conexiones globales</td>
-                            <td>Baja</td>
-                        </tr>
-                        <tr>
-                            <td>Factory</td>
-                            <td>Sistemas multi-protocolo</td>
-                            <td>Media</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="article-content">
-                    <h2>Dependency Injection en Python</h2>
-                    <p>Implementación elegante sin frameworks:</p>
-
-                    <pre><code class="language-python">from dataclasses import dataclass
-
-@dataclass
-class DatabaseService:
-    conn_str: str
-    
-    def get_users(self):
-        print(f"Conectando a {self.conn_str}")
-        return ["user1", "user2"]
-
-class UserService:
-    def __init__(self, db: DatabaseService):
-        self.db = db
-    
-    def get_all_users(self):
-        return self.db.get_users()
-
-# Configuración
-dev_db = DatabaseService("server=dev;user=admin")
-prod_db = DatabaseService("server=prod;user=admin")
-
-# Uso
-user_service = UserService(dev_db)  # Inyectamos dependencia
-print(user_service.get_all_users())</code></pre>
-
-                    <h3>Patrón CQRS (Command Query Responsibility Segregation)</h3>
-                    <p>Ejemplo práctico para separar lecturas y escrituras:</p>
-
-                    <pre><code class="language-python">class ProductCommandService:
-    def __init__(self, db):
-        self.db = db
-    
-    def create_product(self, name, price):
-        # Lógica de validación compleja
-        self.db.execute("INSERT INTO products VALUES (?, ?)", (name, price))
-
-class ProductQueryService:
-    def __init__(self, cache):
-        self.cache = cache
-    
-    def get_products(self):
-        # Cache-first strategy
-        if 'products' in self.cache:
-            return self.cache['products']
-        
-        products = [...]  # Lógica de consulta
-        self.cache['products'] = products
-        return products</code></pre>
-
-                    <h3>Decoradores Avanzados</h3>
-                    <p>Implementando Circuit Breaker:</p>
-
-                    <pre><code class="language-python">import time
-from functools import wraps
-
-class CircuitBreaker:
-    def __init__(self, max_fails=3, reset_timeout=10):
-        self.max_fails = max_fails
-        self.reset_timeout = reset_timeout
-        self.fails = 0
-        self.last_fail = 0
-    
-    def __call__(self, func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            if self.fails >= self.max_fails:
-                if time.time() - self.last_fail > self.reset_timeout:
-                    self.fails = 0  # Reset
-                else:
-                    raise Exception("Circuit breaker activado")
-            
-            try:
-                result = func(*args, **kwargs)
-                self.fails = 0
-                return result
-            except Exception as e:
-                self.fails += 1
-                self.last_fail = time.time()
-                raise
-        
-        return wrapper
-
-@CircuitBreaker(max_fails=2, reset_timeout=30)
-def call_external_api():
-    # Lógica que puede fallar
-    pass</code></pre>
-                </div>
+                        <li>
+                            <strong>Ideal para Prototipado Rápido</strong>:
+                            <p>Permite desarrollar ideas rápidamente gracias a su sintaxis simple.</p>
+                        </li>
+                    </ul>
+                </section>
+                <br>
+                <section class="pros-cons-section">
+                    <h2>3. Ventajas vs Desventajas</h2>
+                    <br>
+                    <div class="pros-cons-grid">
+                        <!-- Ventajas -->
+                        <div class="pros">
+                            <h3>✅ Ventajas</h3>
+                            <br>
+                            <ul>
+                                <li><strong>Fácil de Aprender y Leer</strong>: Su sintaxis es intuitiva y menos verbosa que otros lenguajes.</li>
+                                <li><strong>Perfecto para principiantes</strong>: gracias a su curva de aprendizaje suave.</li>
+                                <li><strong>Gran demanda laboral</strong>: (usado en Google, Netflix, NASA, etc.).</li>
+                                <li><strong>Automatización de tareas </strong>: (scripts, web scraping, bots).</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <!-- Desventajas -->
+                        <div class="cons">
+                            <h3>❌ Desventajas</h3>
+                            <br>
+                            <ul>
+                                <li><strong>Menor Rendimiento en Velocidad</strong>: Al ser interpretado, es más lento que lenguajes compilados como C++ o Rust.</li>
+                                <li><strong>Consumo de Memoria</strong>: No es el mejor para aplicaciones con restricciones de hardware.</li>
+                                <li><strong>Problemas con el Mobile Development</strong>: No es tan fuerte como Kotlin (Android) o Swift (iOS).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
                 <div class="article-footer">
                     <a href="./blog.html" class="btn btn-primary blue">

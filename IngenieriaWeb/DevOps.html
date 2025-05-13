@@ -68,7 +68,7 @@
 
     </div>
   </header>
-  
+
   <main>
     <article class="web-article">
       <br><br>
@@ -78,16 +78,16 @@
           <!-- Meta información -->
           <div class="article-header">
             <div class="article-meta">
-              <span class="article-category">React</span>
-              <span class="article-category">Angular</span>
-              <span class="article-date">Mayo 12, 2025</span>
+              <span class="article-category">Ngnix</span>
+              <span class="article-category">Docker</span>
+              <span class="article-date">Mayo 13, 2025</span>
               <span class="article-time">
                 <ion-icon name="time-outline"></ion-icon>
-                <span>15 min lectura</span>
+                <span>23 min lectura</span>
               </span>
             </div>
 
-            <h1 class="h1 article-title">React vs Angular</h1>
+            <h1 class="h1 article-title">Servidores Ngnix & Contenedores Docker</h1>
 
             <div class="article-author">
               <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
@@ -100,10 +100,289 @@
 
           <!-- Banner principal-->
           <div class="article-banner">
-            <img src="../assets/images/AngvsReact.webp" alt="React vs Angular" loading="lazy">
+            <img src="../assets/images/docker.png" alt="docker" loading="lazy">
           </div>
 
-          
+          <section class="definition-section">
+            <h2>1. ¿Qué es Docker?</h2>
+
+            <div class="definition-card">
+              <p><strong>Docker</strong> es una plataforma de contenedorización que permite empaquetar aplicaciones y
+                sus dependencias en unidades aisladas llamadas <strong>contenedores</strong>. Estos contenedores son
+                ligeros, portátiles y se ejecutan de manera consistente en cualquier entorno.</p>
+
+              <div class="analogy">
+                <p class="highlight">"Como una maleta que lleva todo lo necesario para tu aplicación (código, librerías,
+                  config) y funciona igual en cualquier computadora."</p>
+              </div>
+
+              <div class="use-case">
+                <p><strong>Ejemplo:</strong> Una API en Node.js, con su versión específica de Node, bases de datos y
+                  variables de entorno, puede ejecutarse igual en Linux, Windows o la nube gracias a Docker.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Contenedores ligeros</strong>:
+                <p>Usan el kernel del sistema anfitrión, consumiendo menos recursos que máquinas virtuales (VMs).</p>
+              </li>
+
+              <li>
+                <strong>Portabilidad</strong>:
+                <p>Un contenedor funciona igual en desarrollo, testing y producción ("Build once, run anywhere").</p>
+              </li>
+
+              <li>
+                <strong>Aislamiento</strong>:
+                <p>Cada contenedor tiene su propio sistema de archivos, red y procesos.</p>
+              </li>
+
+              <li>
+                <strong>Docker Hub</strong>:
+                <p>Repositorio público con imágenes preconstruidas (Node, PostgreSQL, Nginx, etc.).</p>
+              </li>
+
+              <li>
+                <strong>Orquestación</strong>:
+                <p>Integración con Kubernetes para manejar múltiples contenedores.</p>
+              </li>
+            </ul>
+
+            <div class="architecture-diagram">
+              <img src="../assets/images/docker-flow.jpg" alt="Arquitectura de Docker" loading="lazy">
+            </div>
+          </section>
+
+          <section class="pros-cons-section">
+            <h2>3. Ventajas vs Desventajas</h2>
+
+            <div class="pros-cons-grid">
+              <!-- Ventajas -->
+              <div class="pros">
+                <h3>✅ Ventajas</h3>
+                <ul>
+                  <li><strong>Consistencia</strong>: Elimina el problema de "Funciona en mi máquina".</li>
+                  <li><strong>Rapidez</strong>: Contenedores inician en segundos vs minutos de una VM.</li>
+                  <li><strong>Eficiencia</strong>: Menor uso de CPU/RAM que las VMs.</li>
+                  <li><strong>CI/CD</strong>: Integración perfecta con pipelines de despliegue.</li>
+                </ul>
+              </div>
+              <br>
+              <!-- Desventajas -->
+              <div class="cons">
+                <h3>❌ Desventajas</h3>
+                <ul>
+                  <li><strong>Curva de aprendizaje</strong>: Requiere entender conceptos como redes, volúmenes.</li>
+                  <li><strong>Seguridad</strong>: Ataques entre contenedores si no se configuran bien.</li>
+                  <li><strong>Persistencia</strong>: Los datos no persisten por defecto (requiere volúmenes).</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="learning-section">
+            <h2>4. Dificultad de Aprendizaje</h2>
+
+            <div class="learning-details">
+              <div class="learning-bar" style="--percentage: 60%;">
+                <div class="bar"></div>
+                <span>Moderada</span>
+              </div>
+
+              <ul class="learning-steps">
+                <li>
+                  <strong>Nivel Básico (1 semana)</strong>:
+                  <p>Comandos básicos: <code>docker run</code>, <code>docker build</code>, <code>docker ps</code>.</p>
+                </li>
+                <li>
+                  <strong>Nivel Intermedio (1 mes)</strong>:
+                  <p>Crear Dockerfiles, manejar redes, volúmenes y Docker Compose.</p>
+                </li>
+                <li>
+                  <strong>Nivel Avanzado (+3 meses)</strong>:
+                  <p>Optimizar imágenes, seguridad (capabilities, usuarios no root), orquestación con Kubernetes.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tip-box">
+              <p>💡 <strong>Consejo</strong>: Empieza con imágenes oficiales de Docker Hub (ej:
+                <code>node:alpine</code>) y luego escribe tus propios Dockerfiles.
+              </p>
+            </div>
+          </section>
+
+          <section class="opinion-section">
+            <h2>5. Valor de Docker en DevOps</h2>
+
+            <div class="opinion-content">
+              <p>Docker revolucionó el desarrollo y despliegue de software porque:</p>
+
+              <ul>
+                <li><strong>Simplifica entornos</strong>: Todos en el equipo usan las mismas versiones de dependencias.
+                </li>
+                <li><strong>Acelera el onboarding</strong>: Nuevos desarrolladores solo necesitan Docker para empezar.
+                </li>
+                <li><strong>Facilita la escalabilidad</strong>: Puedes desplegar más instancias de un contenedor bajo
+                  demanda.</li>
+              </ul>
+
+              <blockquote class="expert-opinion">
+                "Docker es como el empaquetado universal para aplicaciones: una vez empaquetadas, funcionan en cualquier
+                lado sin sorpresas."
+              </blockquote>
+            </div>
+          </section>
+          <br><br>
+
+          <!---- Servidores NGNIX ---->
+
+          <div class="article-banner">
+            <img src="../assets/images/ngnix.png" alt="docker" loading="lazy">
+          </div>
+          <br>
+
+          <section class="definition-section">
+            <h2>1. ¿Qué es Nginx?</h2>
+
+            <div class="definition-card">
+              <p><strong>Nginx</strong> (pronunciado "engine-x") es un servidor web <strong>ligero</strong> y de
+                <strong>alto rendimiento</strong>, también usado como proxy inverso, balanceador de carga y caché HTTP.
+                Creado en 2004, es famoso por su eficiencia con conexiones concurrentes.</p>
+
+              <div class="analogy">
+                <p class="highlight">"Como un policía de tráfico para solicitudes web: dirige el flujo eficientemente,
+                  evitando congestiones."</p>
+              </div>
+
+              <div class="use-case">
+                <p><strong>Ejemplo:</strong> Cuando 10,000 usuarios visitan un sitio al mismo tiempo, Nginx distribuye
+                  las solicitudes sin colapsar, a diferencia de servidores tradicionales como Apache.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Arquitectura asíncrona</strong>:
+                <p>Maneja miles de conexiones simultáneas con bajo consumo de RAM.</p>
+              </li>
+
+              <li>
+                <strong>Proxy inverso</strong>:
+                <p>Redirige solicitudes a otros servidores (ej: Node.js, Python).</p>
+              </li>
+
+              <li>
+                <strong>Balanceo de carga</strong>:
+                <p>Distribuye tráfico entre múltiples servidores backend.</p>
+              </li>
+
+              <li>
+                <strong>Caché HTTP</strong>:
+                <p>Acelera sitios estáticos almacenando copias de recursos.</p>
+              </li>
+
+              <li>
+                <strong>Configuración modular</strong>:
+                <p>Archivos separados por sitios (<code>/etc/nginx/sites-available</code>).</p>
+              </li>
+            </ul>
+
+            <div class="architecture-diagram" style="background-color: rgb(195,222,251);">
+              <img src="../assets/images/ngnix-flow.png" alt="Flujo de Nginx como proxy inverso" loading="lazy">
+            </div>
+          </section>
+
+          <section class="pros-cons-section">
+            <h2>3. Ventajas vs Desventajas</h2>
+
+            <div class="pros-cons-grid">
+              <!-- Ventajas -->
+              <div class="pros">
+                <h3>✅ Ventajas</h3>
+                <ul>
+                  <li><strong>Rendimiento</strong>: Usa solo 2.5MB de RAM por 10k conexiones.</li>
+                  <li><strong>Escalabilidad</strong>: Ideal para sitios con alto tráfico (Netflix, Airbnb lo usan).</li>
+                  <li><strong>Flexibilidad</strong>: Soporta HTTP/2, WebSockets y compresión Gzip.</li>
+                  <li><strong>Open Source</strong>: Versión comunitaria gratuita con soporte empresarial opcional.</li>
+                </ul>
+              </div>
+
+              <!-- Desventajas -->
+              <div class="cons">
+                <h3>❌ Desventajas</h3>
+                <ul>
+                  <li><strong>Configuración compleja</strong>: Sintaxis propia (no XML ni JSON).</li>
+                  <li><strong>Dinámico limitado</strong>: Menos integrado con lenguajes como PHP vs Apache.</li>
+                  <li><strong>Debugging</strong>: Logs menos descriptivos para errores avanzados.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="learning-section">
+            <h2>4. Dificultad de Aprendizaje</h2>
+
+            <div class="learning-details">
+              <div class="learning-bar" style="--percentage: 65%;">
+                <div class="bar"></div>
+                <span>Moderada</span>
+              </div>
+
+              <ul class="learning-steps">
+                <li>
+                  <strong>Nivel Básico (1 semana)</strong>:
+                  <p>Configurar un sitio estático y redirecciones básicas.</p>
+                  <pre><code class="language-nginx" >server {
+    listen 80;
+    server_name ejemplo.com;
+    root /var/www/html;
+}</code></pre>
+                </li>
+                <li>
+                  <strong>Nivel Intermedio (1 mes)</strong>:
+                  <p>Proxy inverso, balanceo de carga y caché.</p>
+                </li>
+                <li>
+                  <strong>Nivel Avanzado (+3 meses)</strong>:
+                  <p>Optimización (keepalive, buffer sizes), seguridad (rate limiting, WAF).</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tip-box">
+              <p>💡 <strong>Consejo</strong>: Usa <code>nginx -t</code> para validar configuraciones antes de reiniciar
+                el servidor.</p>
+            </div>
+          </section>
+
+          <section class="opinion-section">
+            <h2>5. Valor de Nginx en DevOps</h2>
+
+            <div class="opinion-content">
+              <p>Nginx es esencial en infraestructura moderna porque:</p>
+
+              <ul>
+                <li><strong>Reduce costos</strong>: Un solo servidor puede manejar el tráfico que requeriría múltiples
+                  instancias Apache.</li>
+                <li><strong>Mejora la velocidad</strong>: Sitios con Nginx cargan 2x más rápido en promedio.</li>
+                <li><strong>Es versátil</strong>: Funciona como servidor web, proxy, API gateway y más.</li>
+              </ul>
+
+              <blockquote class="expert-opinion">
+                "Nginx es el 'Swiss Army Knife' de los servidores web: una herramienta que hace de todo bien."
+              </blockquote>
+            </div>
+          </section>
 
         </div>
       </div>

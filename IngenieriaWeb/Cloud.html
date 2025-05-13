@@ -68,7 +68,7 @@
 
     </div>
   </header>
-  
+
   <main>
     <article class="web-article">
       <br><br>
@@ -78,16 +78,15 @@
           <!-- Meta información -->
           <div class="article-header">
             <div class="article-meta">
-              <span class="article-category">React</span>
-              <span class="article-category">Angular</span>
-              <span class="article-date">Mayo 12, 2025</span>
+              <span class="article-category">Cloud</span>
+              <span class="article-date">Mayo 13, 2025</span>
               <span class="article-time">
                 <ion-icon name="time-outline"></ion-icon>
-                <span>15 min lectura</span>
+                <span>21 min lectura</span>
               </span>
             </div>
 
-            <h1 class="h1 article-title">React vs Angular</h1>
+            <h1 class="h1 article-title">Cloud Computing</h1>
 
             <div class="article-author">
               <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
@@ -100,10 +99,143 @@
 
           <!-- Banner principal-->
           <div class="article-banner">
-            <img src="../assets/images/AngvsReact.webp" alt="React vs Angular" loading="lazy">
+            <img src="../assets/images/cloud.jpg" alt="Cloud" loading="lazy">
           </div>
 
-          
+          <section class="definition-section">
+            <h2>1. ¿Qué es Cloud Computing?</h2>
+
+            <div class="definition-card">
+              <p><strong>Cloud Computing</strong> es la entrega de servicios informáticos (servidores, almacenamiento,
+                bases de datos, redes, software) a través de Internet (<em>la nube</em>), con un modelo de pago por uso.
+              </p>
+
+              <div class="analogy">
+                <p class="highlight">"Como la electricidad: en lugar de generar energía en casa, la consumes de una red
+                  centralizada y pagas solo lo que usas."</p>
+              </div>
+
+              <div class="use-case">
+                <p><strong>Ejemplo:</strong> Netflix usa AWS (Amazon Web Services) para almacenar películas y escalar
+                  automáticamente durante horas pico.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Autoservicio bajo demanda</strong>:
+                <p>Provisiona recursos (CPU, RAM) en minutos sin intervención humana.</p>
+              </li>
+
+              <li>
+                <strong>Escalabilidad elástica</strong>:
+                <p>Aumenta o reduce capacidad automáticamente según demanda.</p>
+              </li>
+
+              <li>
+                <strong>Pago por uso</strong>:
+                <p>Solo pagas por los recursos consumidos (ej: horas de servidor, GB de almacenamiento).</p>
+              </li>
+
+              <li>
+                <strong>Acceso ubicuo</strong>:
+                <p>Disponible desde cualquier lugar con Internet.</p>
+              </li>
+
+              <li>
+                <strong>Modelos de servicio</strong>:
+                <p><strong>IaaS</strong> (Infraestructura), <strong>PaaS</strong> (Plataforma), <strong>SaaS</strong>
+                  (Software).</p>
+              </li>
+            </ul>
+
+            <div class="architecture-diagram">
+              <img src="../assets/images/cloud-flow.png" alt="Modelos de Cloud" loading="lazy">
+            </div>
+          </section>
+
+          <section class="importance-section">
+            <h2>3. Importancia del Cloud</h2>
+
+            <div class="importance-grid">
+              <div class="importance-card">
+                <h3>Para Empresas</h3>
+                <ul>
+                  <li>Reduce costos de infraestructura física.</li>
+                  <li>Acelera la innovación (deploy en minutos).</li>
+                  <li>Soporta teletrabajo con acceso global.</li>
+                </ul>
+              </div>
+
+              <div class="importance-card">
+                <h3>Para Desarrolladores</h3>
+                <ul>
+                  <li>Acceso a herramientas avanzadas (AI, Big Data).</li>
+                  <li>Integración con DevOps (CI/CD nativo).</li>
+                  <li>Pruebas en entornos idénticos a producción.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <p><strong>Dato clave:</strong> El 94% de las empresas ya usan cloud.</p>
+            </div>
+          </section>
+
+          <section class="pros-cons-section">
+            <h2>4. Beneficios vs Riesgos</h2>
+
+            <div class="pros-cons-grid">
+              <!-- Beneficios -->
+              <div class="pros">
+                <h3>🌟 Beneficios</h3>
+                <ul>
+                  <li><strong>Costos reducidos</strong>: Sin inversión en hardware.</li>
+                  <li><strong>Alta disponibilidad</strong>: SLA de 99.9% en proveedores top.</li>
+                  <li><strong>Recuperación ante desastres</strong>: Backups automáticos en múltiples zonas.</li>
+                  <li><strong>Sostenibilidad</strong>: Datacenters optimizados en energía.</li>
+                </ul>
+              </div>
+              <br><br>
+              <!-- Riesgos -->
+              <div class="cons">
+                <h3>⚠️ Riesgos</h3>
+                <ul>
+                  <li><strong>Vendor lock-in</strong>: Dependencia de un proveedor (AWS, Azure).</li>
+                  <li><strong>Seguridad compartida</strong>: El cliente es responsable de proteger sus datos.</li>
+                  <li><strong>Costos ocultos</strong>: Tráfico de salida, APIs premium.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="security-section">
+            <h2>5. Seguridad en Cloud</h2>
+
+            <div class="security-measures">
+              <div class="measure">
+                <h3>🔒 Buenas Prácticas</h3>
+                <ul>
+                  <li><strong>Cifrado</strong>: Datos en tránsito (TLS) y en reposo (AES-256).</li>
+                  <li><strong>IAM</strong>: Políticas de mínimo privilegio (AWS IAM, Azure AD).</li>
+                  <li><strong>Monitoreo</strong>: Herramientas como AWS GuardDuty, Azure Sentinel.</li>
+                </ul>
+              </div>
+
+              <div class="measure">
+                <h3>🛡️ Modelo de Responsabilidad Compartida</h3>
+                <p>El proveedor protege la infraestructura; tú, tus datos y aplicaciones.</p>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <p>💡 <strong>Consejo:</strong> Usa autenticación MFA y auditorías periódicas de seguridad.</p>
+            </div>
+          </section>
 
         </div>
       </div>

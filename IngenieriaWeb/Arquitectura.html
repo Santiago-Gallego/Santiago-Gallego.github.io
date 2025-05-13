@@ -75,19 +75,18 @@
       <div class="container">
         <div class="article-content">
 
-          <!-- Meta información -->
           <div class="article-header">
             <div class="article-meta">
-              <span class="article-category">React</span>
-              <span class="article-category">Angular</span>
-              <span class="article-date">Mayo 12, 2025</span>
+              <span class="article-category">Cliente Servidor</span>
+              <span class="article-category">MVC</span>
+              <span class="article-date">Mayo 13, 2025</span>
               <span class="article-time">
                 <ion-icon name="time-outline"></ion-icon>
-                <span>15 min lectura</span>
+                <span>13 min lectura</span>
               </span>
             </div>
 
-            <h1 class="h1 article-title">React vs Angular</h1>
+            <h1 class="h1 article-title">MVC & Cliente Servidor</h1>
 
             <div class="article-author">
               <img src="../assets/images/hero-banner.png" alt="Santiago Gallego" width="50" height="50">
@@ -100,138 +99,297 @@
 
           <!-- Banner principal-->
           <div class="article-banner">
-            <img src="../assets/images/AngvsReact.webp" alt="React vs Angular" loading="lazy">
+            <img src="../assets/images/mvc.jpg" alt="React vs Angular" loading="lazy">
           </div>
 
           <section class="definition-section">
-            <h2>1. Modelos Fundamentales</h2>
+            <h2>1. ¿Qué es el patrón MVC?</h2>
 
             <div class="definition-card">
-              <h3>Cliente-Servidor</h3>
-              <p><strong>Modelo de comunicación distribuida</strong> donde el cliente (navegador/app) solicita recursos
-                a un servidor (backend), que procesa y responde.</p>
-              <p class="highlight">"Separación clara entre frontend y backend"</p>
-            </div>
+              <p><strong>MVC (Modelo-Vista-Controlador)</strong> es un patrón arquitectónico que separa una aplicación
+                en tres componentes lógicos:</p>
 
-            <div class="definition-card">
-              <h3>MVC (Modelo-Vista-Controlador)</h3>
-              <p><strong>Patrón arquitectónico</strong> que divide la lógica en 3 componentes: Modelo (datos), Vista
-                (UI) y Controlador (lógica de negocio).</p>
-              <p class="highlight">"Organización interna de la aplicación"</p>
+              <div class="mvc-components">
+                <div class="component">
+                  <h4>Modelo</h4>
+                  <p>Gestiona los <strong>datos</strong> y la lógica de negocio (ej: conexiones a DB, reglas de
+                    validación).</p>
+                </div>
+
+                <div class="component">
+                  <h4>Vista</h4>
+                  <p>Representación <strong>visual</strong> de los datos (interfaz de usuario).</p>
+                </div>
+
+                <div class="component">
+                  <h4>Controlador</h4>
+                  <p><strong>Intermediario</strong> que maneja las entradas del usuario y actualiza Modelo/Vista.</p>
+                </div>
+              </div>
+
+              <p class="highlight">"Separa preocupaciones para código más mantenible y escalable"</p>
             </div>
           </section>
+
           <section class="features-section">
             <h2>2. Características Clave</h2>
 
-            <div class="features-grid">
-              <!-- Cliente-Servidor -->
-              <div class="arch-features">
-                <h3 class="client-title">Cliente-Servidor</h3>
-                <ul>
-                  <li><strong>Roles definidos</strong>: Cliente = Presentación, Servidor = Lógica/Datos</li>
-                  <li><strong>Protocolos</strong>: HTTP/HTTPS, WebSockets</li>
-                  <li><strong>Escalabilidad</strong>: Servidores independientes del cliente</li>
-                  <li><strong>Ejemplos</strong>: APIs REST, GraphQL</li>
-                </ul>
-              </div>
+            <ul class="feature-list">
+              <li>
+                <strong>Separación de responsabilidades</strong>:
+                <p>Cada componente tiene una función específica sin solapamientos.</p>
+              </li>
 
-              <!-- MVC -->
-              <div class="arch-features">
-                <h3 class="mvc-title">MVC</h3>
-                <ul>
-                  <li><strong>Separación de preocupaciones</strong>: Cada componente tiene una responsabilidad única
-                  </li>
-                  <li><strong>Flujo unidireccional</strong>: Usuario → Controlador → Modelo → Vista</li>
-                  <li><strong>Reutilización</strong>: Modelos y vistas intercambiables</li>
-                  <li><strong>Frameworks</strong>: Django (Python), Ruby on Rails, Spring MVC</li>
-                </ul>
-              </div>
+              <li>
+                <strong>Flujo unidireccional</strong>:
+                <p>Usuario → Controlador → Modelo → Vista → Usuario</p>
+              </li>
+
+              <li>
+                <strong>Reutilización de componentes</strong>:
+                <p>Un mismo modelo puede usarse en múltiples vistas (ej: web y móvil).</p>
+              </li>
+
+              <li>
+                <strong>Frameworks populares</strong>:
+                <p>Django (Python), Ruby on Rails, Laravel (PHP), Spring MVC (Java).</p>
+              </li>
+            </ul>
+
+            <div class="architecture-diagram">
+              <img src="../assets/images/mvc-flow.png" alt="Flujo MVC" loading="lazy">
             </div>
           </section>
           <section class="pros-cons-section">
-            <h2>3. Comparación Directa</h2>
+            <h2>3. Ventajas vs Desventajas</h2>
 
-            <div class="comparison-table">
-              <table>
-                <tr>
-                  <th>Criterio</th>
-                  <th>Cliente-Servidor</th>
-                  <th>MVC</th>
-                </tr>
-                <tr>
-                  <td><strong>Acoplamiento</strong></td>
-                  <td>✅ Bajo (front/back separados)</td>
-                  <td>⚠️ Alto (componentes interconectados)</td>
-                </tr>
-                <tr>
-                  <td><strong>Complejidad</strong></td>
-                  <td>✅ Fácil de entender</td>
-                  <td>⚠️ Requiere disciplina en separación</td>
-                </tr>
-                <tr>
-                  <td><strong>Flexibilidad</strong></td>
-                  <td>✅ Client-side puede cambiar fácilmente</td>
-                  <td>✅ Modelos independientes de la vista</td>
-                </tr>
-                <tr>
-                  <td><strong>Uso típico</strong></td>
-                  <td>SPAs, Apps móviles</td>
-                  <td>Aplicaciones monolíticas</td>
-                </tr>
-              </table>
+            <div class="pros-cons-grid">
+              <!-- Ventajas -->
+              <div class="pros">
+                <h3>✅ Ventajas</h3>
+                <br>
+                <ul>
+                  <li><strong>Mantenibilidad</strong>: Código mejor organizado</li>
+                  <li><strong>Testabilidad</strong>: Componentes aislados son fáciles de testear</li>
+                  <li><strong>Trabajo en equipo</strong>: Diferentes desarrolladores pueden trabajar en capas separadas
+                  </li>
+                  <li><strong>Escalabilidad</strong>: Añadir nuevas features sin afectar otras partes</li>
+                  <br>
+                </ul>
+              </div>
+<br>
+              <!-- Desventajas -->
+              <div class="cons">
+                <h3>❌ Desventajas</h3>
+                <br>
+                <ul>
+                  <li><strong>Curva de aprendizaje</strong>: Requiere entender bien las responsabilidades de cada capa
+                  </li>
+                  <li><strong>Overhead</strong>: Puede ser excesivo para proyectos pequeños</li>
+                  <li><strong>Controlador "gordo"</strong>: Riesgo de poner demasiada lógica en los controladores</li>
+                </ul>
+              </div>
             </div>
           </section>
           <section class="learning-section">
-            <h2>4. Dificultad de Implementación</h2>
+            <h2>4. Dificultad de Aprendizaje</h2>
 
-            <div class="learning-path">
-              <div class="client-learning">
-                <h3>Cliente-Servidor</h3>
-                <div class="learning-bar" style="--percentage: 50%;">
-                  <div class="bar"></div>
-                  <span>Moderada</span>
-                </div>
-                <ul>
-                  <li>📌 Conceptos clave: APIs, Endpoints, CORS</li>
-                  <li>📌 Herramientas: Postman, Swagger</li>
-                  <li>⏱️ ~2 semanas para flujos básicos</li>
-                </ul>
+            <div class="learning-details">
+              <div class="learning-bar" style="--percentage: 75%;">
+                <div class="bar"></div>
+                <span>Moderada/Alta</span>
               </div>
 
-              <div class="mvc-learning">
-                <h3>MVC</h3>
-                <div class="learning-bar" style="--percentage: 70%;">
-                  <div class="bar"></div>
-                  <span>Moderada/Alta</span>
-                </div>
-                <ul>
-                  <li>📌 Requiere entender responsabilidades de cada capa</li>
-                  <li>📌 Patrones adicionales: Repositorio, Servicios</li>
-                  <li>⏱️ ~1 mes para implementación robusta</li>
-                </ul>
-              </div>
+              <ul class="learning-steps">
+                <li>
+                  <strong>Nivel Básico (2-3 semanas)</strong>:
+                  <p>Entender el flujo básico y CRUD simple.</p>
+                </li>
+                <li>
+                  <strong>Nivel Intermedio (1-2 meses)</strong>:
+                  <p>Dominio de relaciones entre modelos, vistas parciales.</p>
+                </li>
+                <li>
+                  <strong>Nivel Avanzado (+3 meses)</strong>:
+                  <p>Patrones complementarios (Service Layer, DTOs).</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tip-box">
+              <p>💡 <strong>Consejo</strong>: Empieza con frameworks como Django o Laravel que implementan MVC de forma
+                clara.</p>
             </div>
           </section>
           <section class="opinion-section">
-            <h2>5. ¿Cómo y cuándo usarlos?</h2>
+            <h2>5. Valor de MVC en Desarrollo Moderno</h2>
 
-            <div class="opinion-card">
-              <p><strong>Cliente-Servidor</strong> es esencial para <span class="highlight">aplicaciones distribuidas
-                  modernas</span>. Ideal cuando necesitas separar completamente el frontend (React/Angular) del backend
-                (Node.js/Python).</p>
+            <div class="opinion-content">
+              <p>MVC sigue siendo relevante porque <strong>reduce la complejidad</strong> en aplicaciones
+                medianas/grandes al forzar una estructura organizada. Es especialmente útil cuando:</p>
+
+              <ul>
+                <li>El equipo tiene múltiples roles (diseñadores en vistas, devs en modelos/controladores).</li>
+                <li>Se requiere iterar rápidamente en la interfaz sin tocar la lógica de negocio.</li>
+                <li>La aplicación debe soportar múltiples frontends (web, móvil, API).</li>
+              </ul>
+
+              <blockquote class="expert-opinion">
+                "MVC es como el esqueleto de una aplicación: no es visible para el usuario final, pero sin él todo sería
+                un caos."
+              </blockquote>
             </div>
-
-            <div class="opinion-card">
-              <p><strong>MVC</strong> sigue siendo relevante para <span class="highlight">aplicaciones
-                  monolíticas</span> donde la lógica y la vista están estrechamente integradas (ej: administradores de
-                contenido, sistemas internos).</p>
-            </div>
-
-            <blockquote class="expert-opinion">
-              "Cliente-Servidor es como un restaurante (cliente pide, cocina prepara), MVC es como una cadena de
-              ensamblaje (cada estación transforma el producto). Ambos resuelven problemas distintos."
-            </blockquote>
           </section>
+          <br><br><br>
+
+          <!------  Cliente Servidor  ------>
+
+          <div class="article-banner">
+            <img src="../assets/images/arccliser.webp" alt="React vs Angular" loading="lazy">
+          </div>
+
+          <section class="definition-section">
+            <h2>1. ¿Qué es la Arquitectura Cliente-Servidor?</h2>
+
+            <div class="definition-card">
+              <p><strong>Modelo de comunicación distribuida</strong> donde dos actores interactúan:</p>
+
+              <div class="cs-components">
+                <div class="component">
+                  <h4>Cliente</h4>
+                  <p>Aplicación o dispositivo que <strong>solicita recursos</strong> (navegador web, app móvil).</p>
+                </div>
+
+                <div class="component">
+                  <h4>Servidor</h4>
+                  <p>Sistema que <strong>procesa peticiones</strong> y devuelve respuestas (backend con lógica y datos).
+                  </p>
+                </div>
+              </div>
+
+              <p class="highlight">"El cliente pide, el servidor responde"</p>
+
+              <div class="use-case">
+                <p><strong>Ejemplo real:</strong> Cuando abres Twitter, tu navegador (cliente) solicita datos al
+                  servidor de Twitter, que devuelve los tweets en formato JSON.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="features-section">
+            <h2>2. Características Clave</h2>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Roles bien definidos</strong>:
+                <p>El cliente maneja la interfaz; el servidor, la lógica y datos.</p>
+              </li>
+
+              <li>
+                <strong>Protocolos estándar</strong>:
+                <p>HTTP/HTTPS, WebSockets, gRPC.</p>
+              </li>
+
+              <li>
+                <strong>Comunicación sin estado (stateless)</strong>:
+                <p>Cada petición es independiente (REST) o con estado (WebSockets).</p>
+              </li>
+
+              <li>
+                <strong>Escalabilidad independiente</strong>:
+                <p>Clientes y servidores se escalan por separado.</p>
+              </li>
+            </ul>
+
+            <div class="architecture-diagram">
+              <img src="../assets/images/client-server-flow.png" alt="Flujo Cliente-Servidor" loading="lazy">
+              
+            </div>
+          </section>
+
+          <section class="pros-cons-section">
+            <h2>3. Ventajas vs Desventajas</h2>
+
+            <div class="pros-cons-grid">
+              <!-- Ventajas -->
+              <div class="pros">
+                <h3>✅ Ventajas</h3>
+                <br>
+                <ul>
+                  <li><strong>Separación clara</strong>: Frontend y backend evolucionan por separado.</li>
+                  <li><strong>Escalabilidad horizontal</strong>: Se pueden añadir más servidores bajo demanda.</li>
+                  <li><strong>Multiplataforma</strong>: Un mismo servidor puede atender web, móvil y IoT.</li>
+                  <li><strong>Seguridad centralizada</strong>: Lógica de autenticación en el servidor.</li>
+                </ul>
+                <br>
+              </div>
+<br>
+              <!-- Desventajas -->
+              <div class="cons">
+                <h3>❌ Desventajas</h3>
+                <br>
+                <ul>
+                  <li><strong>Latencia</strong>: Dependencia de la red entre cliente y servidor.</li>
+                  <li><strong>Costo operacional</strong>: Mantener servidores 24/7.</li>
+                  <li><strong>Single Point of Failure</strong>: Si el servidor cae, los clientes no funcionan.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="learning-section">
+            <h2>4. Dificultad de Implementación</h2>
+
+            <div class="learning-details">
+              <div class="learning-bar" style="--percentage: 40%;">
+                <div class="bar"></div>
+                <span>Baja/Moderada</span>
+              </div>
+
+              <ul class="learning-steps">
+                <li>
+                  <strong>Nivel Básico (1 semana)</strong>:
+                  <p>Crear APIs REST simples con Node.js/Express o Python/Flask.</p>
+                </li>
+                <li>
+                  <strong>Nivel Intermedio (1 mes)</strong>:
+                  <p>Manejo de autenticación (JWT, OAuth), conexiones a bases de datos.</p>
+                </li>
+                <li>
+                  <strong>Nivel Avanzado (+3 meses)</strong>:
+                  <p>Optimización (caching, load balancing), WebSockets, GraphQL.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tip-box">
+              <p>💡 <strong>Consejo</strong>: Empieza con herramientas como <strong>Postman</strong> para testear APIs y
+                <strong>Swagger</strong> para documentación.</p>
+            </div>
+          </section>
+
+          <section class="opinion-section">
+            <h2>5. Valor en Desarrollo Moderno</h2>
+
+            <div class="opinion-content">
+              <p>Este modelo es la <strong>base de la web actual</strong> porque:</p>
+
+              <ul>
+                <li>Permite construir <strong>frontends ligeros</strong> (SPAs, apps móviles) que consumen servicios
+                  compartidos.</li>
+                <li>Facilita la <strong>integración entre sistemas</strong> (ej: app bancaria que usa la misma API que
+                  el sitio web).</li>
+                <li>Es <strong>tecnología-agnóstico</strong>: Un servidor en Python puede atender clientes en
+                  JavaScript, Java, Swift, etc.</li>
+              </ul>
+
+              <blockquote class="expert-opinion">
+                "Cliente-Servidor es como el sistema nervioso: el cliente son los sentidos (recolecta información), el
+                servidor es el cerebro (procesa y decide)."
+              </blockquote>
+            </div>
+          </section>
+
         </div>
       </div>
     </article>

@@ -54,6 +54,10 @@
                     </li>
 
                     <li>
+                        <a href="../IngenieriaWeb/ingenieria.html" class="navbar-link" data-nav-link>Ingenieria Web</a>
+                    </li>
+
+                    <li>
                         <a href="../index.html#contact" class="navbar-link" data-nav-link>Contacto</a>
                     </li>
 
@@ -97,9 +101,9 @@
 
                 <div class="article-content">
                     <h2>¿Por qué optimizar consultas?</h2>
-                    <p>En bases de datos con miles de registros, consultas mal escritas pueden ralentizar tu aplicación
-                        hasta en un 500%. SQL Server ofrece herramientas como el <strong>Execution Plan</strong> para
-                        diagnosticar problemas.</p>
+                    <p> La optimización de consultas SQL es crucial porque permite ejecutar consultas de forma más
+                        eficiente, reduciendo el tiempo de ejecución y el uso de recursos, lo que mejora el rendimiento
+                        general de la base de datos y la aplicación.</p>
 
                     <h3>Técnicas Clave</h3>
 
@@ -107,16 +111,21 @@
                         <h4>1. Índices Estratégicos</h4>
                         <p>Crea índices en columnas usadas frecuentemente en WHERE, JOIN y ORDER BY:</p>
                         <pre><code class="language-sql">CREATE INDEX idx_usuario_email ON Usuarios(email);</code></pre>
+                        <p>En lugar de leer todas las páginas (escaneo completo de tabla), te permiten saltar
+                            directamente a la información que buscas.</p>
                     </div>
 
                     <div class="warning-box">
-                        <h4>2. Evita SELECT *</h4>
+                        <h4>2. Evita SELECT * FROM "Tu_Tabla"</h4>
                         <p>Selecciona solo las columnas necesarias:</p>
                         <pre><code class="language-sql">-- Mal
 SELECT * FROM Productos;
 
 -- Bien
 SELECT id, nombre, precio FROM Productos;</code></pre>
+                        <p>Esto para optimizar la respuesta ya que al traer menos datos tenemos menos tiempos de
+                            respuesta, eto tambien implica que el rendimiento la seguridad y la mantenibilidad es mejor.
+                        </p>
                     </div>
 
                     <h3>Análisis de Rendimiento</h3>
@@ -129,82 +138,31 @@ SELECT TOP 10
   query_stats.total_elapsed_time / query_stats.execution_count AS avg_duration
 FROM sys.dm_exec_query_stats AS query_stats
 ORDER BY avg_duration DESC;</code></pre>
+                    <p>Esta consulta es una herramienta poderosa para diagnóstico de rendimiento en SQL Server. Te ayuda
+                        a identificar las consultas más lentas en tu base de datos.
+                        Extrae las 10 consultas mas lentas (en promedio) ejecutadas en tu SQL Server basandose en:
+                    </p>
+
+                    <section class="features-section">
+                        <ul class="feature-list">
+                            <li >
+                                <strong>query_hash</strong>:
+                                <p>Identificador único del tipo de consulta (consultas idénticas tienen el mismo hash).</p>
+                            </li>
+
+                            <li>
+                                <strong>execution_count</strong>:
+                                <p>Veces que se ejecutó esa consulta.</p>
+                            </li>
+
+                            <li>
+                                <strong>avg_duration</strong>:
+                                <p>Tiempo promedio de ejecución (en milisegundos).</p>
+                            </li>
+                        </ul>
+                    </section>
+
                 </div>
-
-
-                <div class="article-content">
-                    <h2>Índices Columnstore</h2>
-                    <p>Revolucionan el rendimiento en data warehouses (OLAP):</p>
-
-                    <pre><code class="language-sql">-- Creación de índice columnstore
-CREATE CLUSTERED COLUMNSTORE INDEX CCI_Transacciones 
-ON Transacciones;
-
--- Consulta optimizada para columnstore
-SELECT 
-    ProductoID,
-    SUM(Cantidad) AS TotalVendido,
-    AVG(PrecioUnitario) AS PrecioPromedio
-FROM Transacciones
-WHERE Fecha BETWEEN '2023-01-01' AND '2023-12-31'
-GROUP BY ProductoID;</code></pre>
-
-                    <h3>Parameter Sniffing Problem</h3>
-                    <p>Solución a un problema común en procedimientos almacenados:</p>
-
-                    <pre><code class="language-sql">-- Problema
-CREATE PROCEDURE GetClientesPorRegion
-    @RegionID INT
-AS
-BEGIN
-    SELECT * FROM Clientes WHERE RegionID = @RegionID;
-END;
-
--- Solución 1: Usar variable local
-CREATE PROCEDURE GetClientesPorRegion_Opt
-    @RegionID INT
-AS
-BEGIN
-    DECLARE @LocalRegionID INT = @RegionID;
-    SELECT * FROM Clientes WHERE RegionID = @LocalRegionID;
-END;
-
--- Solución 2: OPTION (OPTIMIZE FOR UNKNOWN)
-CREATE PROCEDURE GetClientesPorRegion_Opt2
-    @RegionID INT
-AS
-BEGIN
-    SELECT * FROM Clientes 
-    WHERE RegionID = @RegionID
-    OPTION (OPTIMIZE FOR UNKNOWN);
-END;</code></pre>
-
-                    <h3>Tablas Temporales vs Table Variables</h3>
-                    <table class="styled-table">
-                        <tr>
-                            <th>Criterio</th>
-                            <th>Tablas Temporales (#temp)</th>
-                            <th>Variables de Tabla (@table)</th>
-                        </tr>
-                        <tr>
-                            <td>Stats</td>
-                            <td>Tiene estadísticas</td>
-                            <td>Asume 1 fila (problema en datasets grandes)</td>
-                        </tr>
-                        <tr>
-                            <td>Scope</td>
-                            <td>Sesión/scope</td>
-                            <td>Batch actual</td>
-                        </tr>
-                        <tr>
-                            <td>Uso recomendado</td>
-                            <td>+10,000 filas</td>
-                            <td>
-                                <10 filas</td>
-                        </tr>
-                    </table>
-                </div>
-
                 <div class="article-footer">
                     <a href="./blog.html" class="btn btn-primary blue">
                         <ion-icon name="arrow-back"></ion-icon>
@@ -241,10 +199,6 @@ END;</code></pre>
   -->
 
     <a href="#top" class="back-to-top" data-back-to-top>Volver arriba</a>
-
-
-
-
 
     <!-- 
     - custom js link
