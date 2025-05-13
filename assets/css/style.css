@@ -2194,7 +2194,6 @@ pre code.language-nginx {
 }
 
 .feature-list li {
-  background: url('../assets/images/node-icon.svg') no-repeat left center;
   background-size: 24px;
   padding-left: 32px;
   margin-bottom: 15px;
